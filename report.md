@@ -32,16 +32,16 @@ There are four main files:
 
 Generally, the model works very well.
 
-![Good case](/Users/Logan/Google Drive/hampton_creek/report/prep29.png)
-![Good case](/Users/Logan/Google Drive/hampton_creek/report/prep34.png)
+![Good case](/Users/Logan/Google Drive/enthalpy/images/prep29.png)
+![Good case](/Users/Logan/Google Drive/enthalpy/images/prep34.png)
 
 However, in some odd reactions, the system will misclassify the end point. In these cases, it might be more advantages to just take the point at which heat flow is maximized post-peak. I've built that in as the ```use_alternative``` parameter in ```peak_detection.find_onset_point()``` if you'd like to do that. For example, it fixes preparation 40:
-![Bad case](/Users/Logan/Google Drive/hampton_creek/report/prep40.png)
+![Bad case](/Users/Logan/Google Drive/enthalpy/images/prep40.png)
 To this
-![Good case](/Users/Logan/Google Drive/hampton_creek/report/prep40better.png)
+![Good case](/Users/Logan/Google Drive/enthalpy/images/prep40better.png)
 
 However, the original methodology is much better in cases like this:
-![Good case](/Users/Logan/Google Drive/hampton_creek/report/prep32bump.png)
+![Good case](/Users/Logan/Google Drive/enthalpy/images/prep32bump.png)
 
 ### Advantages of this model
 * This model saves time for a researcher.
