@@ -9,7 +9,7 @@ from bokeh.models import LinearAxis, Range1d
 import integration
 
 def smooth_array(arr):
-    smoothing = int(len(arr)/3) * 2 + 1
+    smoothing = len(arr) // 3 * 2 + 1
     return savgol_filter(arr, smoothing, 5)
 
 def dydx(x_array, y_array):
@@ -63,13 +63,10 @@ def split_data(temp, heat_flow, return_as_list = True):
     if return_as_list:
         return before_temp, before_heat_flow, after_temp, after_heat_flow
     else:
-        d = {
-            'before': {'temp': before_temp,
-                       'heat flow': before_heat_flow},
-             'after': {'temp': after_temp,
-                    'heat flow': after_heat_flow}
-             }
-        return d
+        return {
+            'before': {'temp': before_temp, 'heat flow': before_heat_flow},
+            'after': {'temp': after_temp, 'heat flow': after_heat_flow},
+        }
 
 
 def find_candidate_points(x_array, y_array, min_points, epsilon, start_temp):
@@ -104,7 +101,7 @@ def alt_find_candidate_points(x_array, y_array, min_points, epsilon, start_temp)
             candidates.append(d2[i])
             i += 1
         else:
-            i = i + find_last_true_point(subset)
+            i += find_last_true_point(subset)
     return candidates
 
 def find_onset_point(x_array, y_array, min_points, epsilon, start_temp):

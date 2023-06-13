@@ -37,4 +37,4 @@ def get_dir(append = ''):
 
 def get_files():
     get_dir('data/raw/all_preps')
-    return [filename for filename in glob.glob("*.txt")]
+    return list(glob.glob("*.txt"))

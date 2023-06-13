@@ -37,9 +37,7 @@ def find_onset_point(X, y):
     local_minima = argrelextrema(second_derivative, np.less)[0]
     relevant_minima_points = local_minima[local_minima > 100] # crop off the first tail
 
-    start_point_id = relevant_minima_points[0] # take the first relevant point
-
-    return start_point_id
+    return relevant_minima_points[0]
 
 def find_ending_point(X, y, start_point, use_alternative = False):
     """

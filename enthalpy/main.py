@@ -58,7 +58,7 @@ def process_data(filepath, plot = False):
 
         # set up plot
         fig, ax = plt.subplots(1)
-        ax.set_title("Preparation {}".format(name_of_preparation))
+        ax.set_title(f"Preparation {name_of_preparation}")
         ax.set_xlabel("Temperature")
         ax.set_ylabel("Heat Flow")
         ax.annotate(statistics_text,
@@ -81,18 +81,20 @@ def process_data(filepath, plot = False):
               )
 
         # plot onset point
-        plt.scatter(x0,
-                  y0,
-                  color = 'green',
-                  label = 'Onset: {}, {}'.format(round(x0,2), round(y0, 2))
-                 )
+        plt.scatter(
+            x0,
+            y0,
+            color='green',
+            label=f'Onset: {round(x0, 2)}, {round(y0, 2)}',
+        )
 
         # plot end point
-        plt.scatter(x1,
-                  y1,
-                  color = 'purple',
-                  label = 'End: {}, {}'.format(round(x1, 2), round(y1, 2))
-                 )
+        plt.scatter(
+            x1,
+            y1,
+            color='purple',
+            label=f'End: {round(x1, 2)}, {round(y1, 2)}',
+        )
         plt.legend()
         plt.show()
 

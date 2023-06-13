@@ -140,7 +140,5 @@ def get_energy_all_files(filenames, plot = False, crop = False):
     INPUT: list of filepaths
     OUTPUT: 2D array with C1 = filename, C2 = energy release
     """
-    releases = []
-    for f in filenames:
-        releases.append(get_energy_file(f, plot, crop))
+    releases = [get_energy_file(f, plot, crop) for f in filenames]
     return np.array(releases)
